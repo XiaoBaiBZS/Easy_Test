@@ -1,0 +1,1753 @@
+{
+  ["sidebar"]	= {
+      ["items"]	= {
+          [1]	= {
+              ["name"]	= "提示：如何绑定学生？" ;
+              ["icon"]	= "drawable/dianji.png" ;
+              ["onClick"]	= "进入子页面(\"问题\")" ;
+              } ;
+          [2]	= {
+              ["name"]	= "阅卷平台" ;
+              ["icon"]	= "drawable/pepyuwen.png" ;
+              ["onClick"]	= "进入子页面(\"阅卷\")" ;
+              } ;
+          [3]	= {
+              ["name"]	= "组卷平台" ;
+              ["icon"]	= "drawable/juanzeng.png" ;
+              ["onClick"]	= "进入子页面(\"组卷平台\")" ;
+              } ;
+          [4]	= {
+              ["name"]	= "登录与绑定" ;
+              ["icon"]	= "drawable/1628081677749.png" ;
+              ["onClick"]	= "加载网页(\"https://mjz.xiaoxianai.cn/login\")" ;
+              } ;
+          [5]	= {
+              ["name"]	= "服务与咨询" ;
+              ["icon"]	= "drawable/1622363048287.png" ;
+              ["onClick"]	= "进入子页面(\"咨询\")" ;
+              } ;
+          [6]	= {
+              ["name"]	= "设置" ;
+              ["icon"]	= "drawable/shezhi.png" ;
+              ["onClick"]	= "进入子页面(\"设置\")" ;
+              } ;
+          } ;
+      ["启用"]	= true ;
+      ["启用顶部图片"]	= true ;
+      } ;
+  ["events"]	= {
+      ["网页加载完毕"]	= "\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["程序启动"]	= "\
+加载Js([==[\
+\
+//07:42-51\
+        var hm = document.createElement(\"script\");\
+        hm.src = \"https://yyyp.oss-cn-beijing.aliyuncs.com/CDN/%E7%BF%BB%E8%AF%91/%E5%BD%A9%E4%BA%91%E7%BF%BB%E8%AF%91.js\";\
+        var s = document.getElementsByTagName(\"title\")[0]; \
+        s.parentNode.insertBefore(hm, s);\
+]==])\
+\
+function AdapLan(zh,el)\
+  import \"java.util.Locale\"\
+  NowLanguage = Locale.getDefault().getLanguage();\
+  if NowLanguage==\"zh\" then\
+    return zh\
+  else\
+    return el\
+  end\
+end\
+\
+\
+\
+titleTvw.setText(AdapLan('E测评','EasyTest'))\
+import \"android.content.pm.ActivityInfo\"\
+\
+--用户\
+activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);\
+--代码如下：\
+\
+--添加到启动事件后，将顶栏颜色设置为透明，即可实现透明到网页的效果\
+加载Js([[document.body.style.paddingTop=0]])\
+\
+local f=io.open(\"/sdcard/ZujuanDati\",'r')\
+if f~=nil\
+then\
+else\
+  import \"java.io.File\"--导入File类\
+  File(\"/sdcard/ZujuanDati\").mkdir()\
+end\
+local f=io.open(\"/storage/emulated/0/ZujuanDati/Account\",'r')\
+if f~=nil\
+then\
+else\
+  import \"java.io.File\"--导入File类\
+  File(\"/storage/emulated/0/ZujuanDati/Account\").mkdir()\
+end\
+local f=io.open(\"/storage/emulated/0/ZujuanDati/files\",'r')\
+if f~=nil\
+then\
+else\
+  import \"java.io.File\"--导入File类\
+  File(\"/storage/emulated/0/ZujuanDati/files\").mkdir()\
+end\
+local f=io.open(\"/storage/emulated/0/Download/组卷答题下载/我的应用/\",'r')\
+if f~=nil\
+then\
+else\
+  import \"java.io.File\"--导入File类\
+  File(\"/storage/emulated/0/Download/组卷答题下载/我的应用/\").mkdir()\
+end\
+\
+\
+local f=io.open(\"/storage/emulated/0/ZujuanDati/Account/Account.txt\",'r')\
+if f~=nil\
+then\
+else\
+  io.open(\"/storage/emulated/0/ZujuanDati/Account/Account.txt\", 'w')\
+  local txt=\"【name】【name】【qq】【qq】\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/Account/Account.txt\",\"w+\"):write(txt):close()\
+end\
+local f=io.open(\"/storage/emulated/0/ZujuanDati/files/Setting.txt\",'r')\
+if f~=nil\
+then\
+else\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting.txt\", 'w')\
+  local txt=\"1\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting.txt\",\"w+\"):write(txt):close()\
+end\
+import \"java.io.File\"--导入File类\
+if File(\"/storage/emulated/0/ZujuanDati/files/Setting.txt\").length()==0\
+then\
+  local txt=\"1\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting.txt\",\"w+\"):write(txt):close()\
+else\
+end\
+local f=io.open(\"/storage/emulated/0/ZujuanDati/files/Setting2.txt\",'r')\
+if f~=nil\
+then\
+else\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting2.txt\", 'w')\
+  local txt=\"0\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting2.txt\",\"w+\"):write(txt):close()\
+end\
+import \"java.io.File\"--导入File类\
+if File(\"/storage/emulated/0/ZujuanDati/files/Setting2.txt\").length()==0\
+then\
+  local txt=\"0\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting2.txt\",\"w+\"):write(txt):close()\
+else\
+\
+end \
+if File(\"/storage/emulated/0/ZujuanDati/files/Setting3.txt\").length()==0\
+then\
+  local txt=\"0\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting3.txt\",\"w+\"):write(txt):close()\
+else\
+\
+end \
+local f=io.open(\"/storage/emulated/0/ZujuanDati/files/Setting4.txt\",'r')\
+if f~=nil\
+then\
+else\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting4.txt\", 'w')\
+  local txt=\"1\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting4.txt\",\"w+\"):write(txt):close()\
+end\
+import \"java.io.File\"--导入File类\
+if File(\"/storage/emulated/0/ZujuanDati/files/Setting4.txt\").length()==0\
+then\
+  local txt=\"1\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting4.txt\",\"w+\"):write(txt):close()\
+else\
+end\
+\
+local f=io.open(\"/storage/emulated/0/ZujuanDati/相机配置.txt\",'r')\
+if f~=nil\
+then\
+else\
+  io.open(\"/storage/emulated/0/ZujuanDati/相机配置.txt\", 'w')\
+\
+  local txt=\"【序号】mp1【序号】【网址】com.android.camera【网址】\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/相机配置.txt\",\"w+\"):write(txt):close()\
+\
+\
+end\
+import \"java.io.File\"--导入File类\
+\
+\
+if File(\"/storage/emulated/0/ZujuanDati/相机配置.txt\").length()==0\
+then\
+  local txt=\"【序号】mp1【序号】【网址】com.android.camera【网址】\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/相机配置.txt\",\"w+\"):write(txt):close()\
+else\
+\
+end\
+\
+\
+\
+local f=io.open(\"/storage/emulated/0/ZujuanDati/语言配置.txt\",'r')\
+if f~=nil\
+then\
+else\
+  io.open(\"/storage/emulated/0/ZujuanDati/语言配置.txt\", 'w')\
+\
+  local txt=\"【应用】0【应用】\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/语言配置.txt\",\"w+\"):write(txt):close()\
+\
+\
+end\
+\
+import \"java.io.File\"--导入File类\
+\
+\
+if File(\"/storage/emulated/0/ZujuanDati/语言配置.txt\").length()==0\
+then\
+  local txt=\"【应用】0【应用】\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/语言配置.txt\",\"w+\"):write(txt):close()\
+else\
+\
+end\
+local f=io.open(\"/storage/emulated/0/ZujuanDati/语言配置.txt\",'r')\
+if f~=nil\
+then\
+else\
+  io.open(\"/storage/emulated/0/ZujuanDati/主题配置.txt\", 'w')\
+\
+  local txt=\"【深色】0【深色】【强调】#FF0A58F6【强调】【js】0【js】\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/主题配置.txt\",\"w+\"):write(txt):close()\
+\
+\
+end\
+import \"java.io.File\"--导入File类\
+\
+\
+if File(\"/storage/emulated/0/ZujuanDati/主题配置.txt\").length()==0\
+then\
+  local txt=\"【深色】0【深色】【强调】#FF0A58F6【强调】【js】0【js】\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/主题配置.txt\",\"w+\"):write(txt):close()\
+else\
+\
+end\
+local f=io.open(\"/storage/emulated/0/ZujuanDati/files/Setting5.txt\",'r')\
+if f~=nil\
+then\
+else\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting5.txt\", 'w')\
+  local txt=\"1\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting5.txt\",\"w+\"):write(txt):close()\
+end\
+import \"java.io.File\"--导入File类\
+if File(\"/storage/emulated/0/ZujuanDati/files/Setting5.txt\").length()==0\
+then\
+  local txt=\"1\"\
+  io.open(\"/storage/emulated/0/ZujuanDati/files/Setting5.txt\",\"w+\"):write(txt):close()\
+else\
+end --百度统计用户量\
+import \"com.baidu.mobstat.StatService\"\
+StatService()\
+.setAppKey(\"dc864a5442\")--百度统计官网登录账号注册自己的产品就可以获得自己的appkey\
+.start(this)\
+--主页本地libs文件夹放到自己的主页文件夹下，不需要任何改动，上面的百度统计代码放在主页程序启动里，appkey改成自己的就可以了\
+--教程https://yum5.cn/forum.php?mod=viewthread&tid=181&mobile=2\
+--百度统计官网https://mtj.baidu.com/web/welcome/login\
+-- appkey = '5db976b5c5'\
+--程序启动时会执行的事件\
+\
+--print(AdapLan(\"中国你好\",\"Hello, China\"))\
+require \"import\"\
+import \"android.widget.*\"\
+import \"android.view.*\"\
+\
+\
+\
+layout={\
+  RelativeLayout;\
+  layout_width=\"fill\";\
+  layout_height=\"fill\";\
+  background=\"\";\
+  id=\"ly\";\
+\
+  {\
+    LinearLayout;\
+    layout_height=\"-1\";\
+    layout_width=\"-1\";\
+  };\
+  {\
+    CardView;\
+    layout_height=\"11%w\";\
+    layout_marginRight=\"5%w\";\
+    -- layout_margin='5%h';--边距\
+    elevation='10dp';--卡片阴影\
+    background=\"#eeeeee\";\
+    id=\"bt\";\
+    layout_alignParentRight=\"true\";\
+    layout_width=\"11%w\";\
+    layout_alignParentBottom=\"true\";\
+\
+    layout_marginBottom=\"12%h\";\
+\
+    {\
+      ImageView;--图片控件\
+      src='p.png';--图片路径\
+      layout_width='4.5%w';--图片宽度\
+      layout_height='4.5%w';--图片高度\
+      layout_gravity='center';--卡片重力\
+      scaleType='fitXY';--图片显示类型\
+      ColorFilter='#ffffffff';--图片着色\
+      id=\"p\";\
+\
+    };\
+\
+  };\
+\
+\
+};\
+drawerLayout.getParent().addView(loadlayout(layout))\
+\
+\
+function 控件圆角(id,InsideColor,radiu)\
+  import \"android.graphics.drawable.GradientDrawable\"\
+  drawable = GradientDrawable()\
+  drawable.setShape(GradientDrawable.RECTANGLE)\
+  drawable.setColor(InsideColor)\
+  drawable.setCornerRadii({radiu,radiu,radiu,radiu,radiu,radiu,radiu,radiu});\
+  id.setBackgroundDrawable(drawable)\
+end\
+\
+控件圆角(bt,0xFF0B58F1,300)\
+bt.onLongClick=function()--长按事件\
+  进入子页面(\"摄像机选择\")\
+end;\
+\
+bt.onClick=function(v)\
+  require \"import\"\
+  import \"android.app.*\"\
+  import \"android.os.*\"\
+  import \"android.widget.*\"\
+  import \"android.view.*\"\
+  import \"android.content.Context\"\
+  import \"android.content.Intent\"\
+  import \"android.app.PendingIntent\"\
+  import \"android.app.Notification\"\
+\
+\
+  print(AdapLan(\"由于系统原因，请先拍照后再上传，注意看清题号😘\",\"Due to system reasons, please take a photo before uploading, pay attention to see the question number 😘\"))\
+  for account in io.lines(\"/storage/emulated/0/ZujuanDati/相机配置.txt\") do\
+    local content=account\
+    local 序号=content:match(\"【序号】(.-)【序号】\")\
+    local 网址=content:match(\"【网址】(.-)【网址】\")\
+\
+    if 序号=='mp1' then\
+      if pcall(function() activity.getPackageManager().getPackageInfo(\"com.android.camera\",0) end) then\
+        packageName=\"com.android.camera\"\
+        import \"android.content.Intent\"\
+        import \"android.content.pm.PackageManager\"\
+        manager = activity.getPackageManager()\
+        open = manager.getLaunchIntentForPackage(packageName)\
+        this.startActivity(open)\
+      else\
+        packageName=\"com.huawei.camera\"\
+        import \"android.content.Intent\"\
+        import \"android.content.pm.PackageManager\"\
+        manager = activity.getPackageManager()\
+        open = manager.getLaunchIntentForPackage(packageName)\
+        this.startActivity(open)\
+\
+      end\
+\
+    elseif 序号=='mp2' then\
+      if pcall(function() activity.getPackageManager().getPackageInfo(\"com.intsig.camscanner\",0) end) then\
+        packageName=\"com.intsig.camscanner\"\
+        import \"android.content.Intent\"\
+        import \"android.content.pm.PackageManager\"\
+        manager = activity.getPackageManager()\
+        open = manager.getLaunchIntentForPackage(packageName)\
+        this.startActivity(open)\
+      else\
+        function 商店搜索(包名)\
+          import \"android.content.Intent\"\
+          import \"android.net.Uri\"\
+          intent = Intent(\"android.intent.action.VIEW\")\
+          intent.setData(Uri.parse(\"market://details?id=\"..包名))\
+          this.startActivity(intent)\
+        end\
+        --调用方法\
+        商店搜索(\"com.intsig.camscanner\")\
+\
+      end\
+\
+    elseif 序号=='mp3' then\
+      if pcall(function() activity.getPackageManager().getPackageInfo(\"com.google.android.GoogleCamera\",0) end) then\
+        packageName=\"com.google.android.GoogleCamera\"\
+        import \"android.content.Intent\"\
+        import \"android.content.pm.PackageManager\"\
+        manager = activity.getPackageManager()\
+        open = manager.getLaunchIntentForPackage(packageName)\
+        this.startActivity(open)\
+      else\
+        function 商店搜索(包名)\
+          import \"android.content.Intent\"\
+          import \"android.net.Uri\"\
+          intent = Intent(\"android.intent.action.VIEW\")\
+          intent.setData(Uri.parse(\"market://details?id=\"..包名))\
+          this.startActivity(intent)\
+        end\
+        --调用方法\
+        商店搜索(\"com.google.android.GoogleCamera\")\
+\
+      end\
+\
+    elseif 序号=='mp4' then\
+      if pcall(function() activity.getPackageManager().getPackageInfo(\"com.uzero.baimiao\",0) end) then\
+        packageName=\"com.uzero.baimiao\"\
+        import \"android.content.Intent\"\
+        import \"android.content.pm.PackageManager\"\
+        manager = activity.getPackageManager()\
+        open = manager.getLaunchIntentForPackage(packageName)\
+        this.startActivity(open)\
+      else\
+        function 商店搜索(包名)\
+          import \"android.content.Intent\"\
+          import \"android.net.Uri\"\
+          intent = Intent(\"android.intent.action.VIEW\")\
+          intent.setData(Uri.parse(\"market://details?id=\"..包名))\
+          this.startActivity(intent)\
+        end\
+        --调用方法\
+        商店搜索(\"com.uzero.baimiao\")\
+\
+      end\
+\
+    else\
+\
+      if pcall(function() activity.getPackageManager().getPackageInfo(网址,0) end) then\
+        packageName=网址\
+        import \"android.content.Intent\"\
+        import \"android.content.pm.PackageManager\"\
+        manager = activity.getPackageManager()\
+        open = manager.getLaunchIntentForPackage(packageName)\
+        this.startActivity(open)\
+      else\
+        function 商店搜索(包名)\
+          import \"android.content.Intent\"\
+          import \"android.net.Uri\"\
+          intent = Intent(\"android.intent.action.VIEW\")\
+          intent.setData(Uri.parse(\"market://details?id=\"..包名))\
+          this.startActivity(intent)\
+        end\
+        --调用方法\
+        商店搜索(网址)\
+\
+      end\
+\
+\
+\
+    end\
+\
+  end\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+end\
+\
+\
+\
+drawerLayout.setScrimColor(0)\
+\
+--[[添加背景\
+drawerLayout.addView(loadlayout({\
+  ImageView,\
+  id=\"background\",\
+  scaleType=\"fitXY\",\
+  src=\"drawable/background.jpg\",\
+}),0)\
+\
+--获取页面根布局\
+--local lay=drawerLayout.getChildAt(1)\
+\
+--监听侧滑滑动事件\
+local pio=this.getWidth()*0.1\
+drawerLayout.setDrawerListener(DrawerLayout.DrawerListener{\
+  onDrawerSlide=function(v,i)\
+    lay.setScaleX(1-i/3.5).setScaleY(1-i/3.5)--页面缩放\
+    lay.setTranslationX((({0,0,1,0,-1})[v.LayoutParams.gravity])*(i*3.5*pio))--页面位移(其中那段奇怪的表是用于判断位移方向，不过依然仅支持左右侧滑)\
+    --sidebar.setScaleX(2-i).setScaleY(2-i)--侧滑栏从大到小缩放\
+    --sidebar.setScaleX(i).setScaleY(i)--侧滑栏从小到大缩放\
+  end})\
+\
+--新增右侧侧滑栏]]\
+\
+--drawerLayout.addView(\
+sidebar.layoutParams.gravity=0--剥夺侧滑身份\
+\
+page=drawerLayout.getChildAt(0)--获取整个页面\
+drawerLayout.removeView(page)--修改页面层次\
+drawerLayout.addView(page)--作用同上\
+\
+sidebar=loadlayout\
+\
+\
+{\
+  ScrollView,\
+  layout_width=\"300dp\";\
+  layout_height=\"wrap\";\
+  VerticalScrollBarEnabled=false;\
+  \
+  id=\"sidebar\",\
+  {\
+    LinearLayout;--线性布局\
+    Orientation='horizontal';--布局方向\
+    layout_width='300dp';--布局宽度\
+    layout_height='wrap';--布局高度\
+    background='';--布局背景颜色\
+    \
+\
+\
+  \
+    {\
+      CardView;--卡片控件\
+      layout_margin='30dp';--边距\
+      layout_gravity='center';--重力\
+      --左:left 右:right 中:center 顶:top 底:bottom\
+      elevation='0dp';--阴影\
+      layout_width='fill';--宽度\
+      layout_height='wrap';--高度\
+      CardBackgroundColor='#f1f3f5';--颜色\
+      radius='17dp';--圆角\
+      elevation='10dp';--卡片阴影\
+      \
+      {\
+        ImageView;--图片控件\
+        src='mohu9.jpg';--图片路径\
+        layout_width='fill';--图片宽度\
+        layout_height='fill';--图片高度\
+        --    scaleType='fitXY';--图片显示类型\
+        id='pic';\
+        scaleType=\"centerCrop\"\
+\
+\
+      };\
+\
+      {\
+        CardView;--卡片控件\
+        layout_margin='15dp';--边距\
+        layout_gravity='center|top';--重力\
+        --左:left 右:right 中:center 顶:top 底:bottom\
+        elevation='0dp';--阴影\
+        layout_width='fill';--宽度\
+        layout_height='6%h';--高度\
+        CardBackgroundColor='';--颜色\
+        radius='8dp';--圆角\
+\
+        {\
+          TextView;--文本控件\
+          layout_width='fill';--文本宽度\
+          layout_height='fill';--文本高度\
+          gravity='left|center';--重力属性\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          textColor='#000000';--文字颜色\
+          text=AdapLan('更多','More');--显示的文字\
+          textSize='24dp';--文字大小\
+        };\
+      };\
+\
+\
+\
+      {\
+        CardView;--卡片控件\
+        layout_margin='';--边距\
+        layout_marginLeft='13dp';--左距\
+        layout_marginRight='13dp';--右距\
+        layout_marginTop='8%h';--顶距\
+        layout_gravity='center|top';--重力\
+        --左:left 右:right 中:center 顶:top 底:bottom\
+        elevation='0dp';--阴影\
+        layout_width='fill';--宽度\
+        layout_height='35dp';--高度\
+        CardBackgroundColor='#ffffffff';--颜色\
+        radius='17dp';--圆角\
+\
+        {\
+          CardView;--卡片控件\
+          layout_margin='';--边距\
+          layout_gravity='';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='fill';--宽度\
+          layout_height='35dp';--高度\
+          -- layout_marginTop='';--顶距\
+          CardBackgroundColor='#ffffffff';--颜色\
+          radius='';--圆角\
+          id='ks';\
+               {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|left';--重力属性\
+            textColor='#FF6B6C6E';--文字颜色\
+            text=AdapLan('如何绑定学生？','How to bind students?');--显示的文字\
+            textSize='15dp';--文字大小\
+            layout_margin='6dp';--边距\
+            layout_marginLeft='10dp';--左距\
+        \
+            id='ks';\
+          };\
+\
+        };\
+\
+\
+      };\
+\
+\
+  \
+\
+      {\
+        CardView;--卡片控件\
+        layout_margin='';--边距\
+        layout_marginLeft='13dp';--左距\
+        layout_marginRight='13dp';--右距\
+        layout_marginTop='15%h';--顶距\
+        layout_gravity='center|top';--重力\
+        --左:left 右:right 中:center 顶:top 底:bottom\
+        elevation='0dp';--阴影\
+        layout_width='fill';--宽度\
+        layout_height='8%h';--高度\
+        CardBackgroundColor='#ffffffff';--颜色\
+        radius='17dp';--圆角\
+\
+        {\
+          CardView;--卡片控件\
+          layout_margin='';--边距\
+          layout_gravity='';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='fill';--宽度\
+          layout_height='8%h';--高度\
+          -- layout_marginTop='';--顶距\
+          CardBackgroundColor='#ffffffff';--颜色\
+          radius='';--圆角\
+          id='ka';\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|left';--重力属性\
+            textColor='#000000';--文字颜色\
+            text=AdapLan('阅卷平台','Grading Platform');--显示的文字\
+            textSize='17dp';--文字大小\
+            layout_margin='13dp';--边距\
+            id='ka';\
+          };\
+\
+        };\
+\
+      };\
+\
+\
+      {\
+        CardView;--卡片控件\
+        layout_margin='';--边距\
+        layout_marginLeft='13dp';--左距\
+        layout_marginRight='13dp';--右距\
+       layout_marginTop='25%h';--顶距\
+        layout_gravity='center|top';--重力\
+        --左:left 右:right 中:center 顶:top 底:bottom\
+        elevation='0dp';--阴影\
+        layout_width='fill';--宽度\
+        layout_height='8%h';--高度\
+        CardBackgroundColor='#ffffffff';--颜色\
+        radius='17dp';--圆角\
+\
+        {\
+          CardView;--卡片控件\
+          layout_margin='';--边距\
+          layout_gravity='';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='fill';--宽度\
+          layout_height='8%h';--高度\
+          -- layout_marginTop='';--顶距\
+          CardBackgroundColor='#ffffffff';--颜色\
+          radius='';--圆角\
+          id='kb';\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|left';--重力属性\
+            textColor='#000000';--文字颜色\
+            text=AdapLan('组卷平台','Group Test Platform');--显示的文字\
+            textSize='17dp';--文字大小\
+            layout_margin='8dp';--边距\
+            id='kb';\
+          };\
+\
+        };\
+\
+\
+\
+\
+\
+      };\
+\
+      {\
+        CardView;--卡片控件\
+        layout_margin='';--边距\
+        layout_marginLeft='13dp';--左距\
+        layout_marginRight='13dp';--右距\
+        layout_marginTop='35%h';--顶距\
+        layout_gravity='center|top';--重力\
+        --左:left 右:right 中:center 顶:top 底:bottom\
+        elevation='0dp';--阴影\
+        layout_width='fill';--宽度\
+        layout_height='8%h';--高度\
+        CardBackgroundColor='#ffffffff';--颜色\
+        radius='17dp';--圆角\
+\
+        {\
+          CardView;--卡片控件\
+          layout_margin='';--边距\
+          layout_gravity='';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='fill';--宽度\
+          layout_height='8%h';--高度\
+          -- layout_marginTop='';--顶距\
+          CardBackgroundColor='#ffffffff';--颜色\
+          radius='';--圆角\
+          id='kc';\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|left';--重力属性\
+            textColor='#000000';--文字颜色\
+            text=AdapLan('登录与绑定','Login and Binding');--显示的文字\
+            textSize='17dp';--文字大小\
+            layout_margin='8dp';--边距\
+            id='kc';\
+          };\
+\
+        };\
+\
+\
+\
+\
+\
+      };\
+\
+\
+\
+\
+      {\
+        CardView;--卡片控件\
+        layout_margin='';--边距\
+        layout_marginLeft='13dp';--左距\
+        layout_marginRight='13dp';--右距\
+        layout_marginTop='45%h';--顶距\
+        layout_gravity='center|top';--重力\
+        --左:left 右:right 中:center 顶:top 底:bottom\
+        elevation='0dp';--阴影\
+        layout_width='fill';--宽度\
+        layout_height='8%h';--高度\
+        CardBackgroundColor='#ffffffff';--颜色\
+        radius='17dp';--圆角\
+\
+        {\
+          CardView;--卡片控件\
+          layout_margin='';--边距\
+          layout_gravity='';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='fill';--宽度\
+          layout_height='8%h';--高度\
+          -- layout_marginTop='';--顶距\
+          CardBackgroundColor='#ffffffff';--颜色\
+          radius='';--圆角\
+          id='kd';\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|left';--重力属性\
+            textColor='#000000';--文字颜色\
+            text=AdapLan('服务与咨询','Service and Consulting');--显示的文字\
+            textSize='17dp';--文字大小\
+            layout_margin='8dp';--边距\
+            id='kd';\
+          };\
+\
+        };\
+\
+\
+\
+\
+\
+      };\
+\
+      {\
+        CardView;--卡片控件\
+        layout_margin='';--边距\
+        layout_marginLeft='13dp';--左距\
+        layout_marginRight='13dp';--右距\
+        layout_marginTop='55%h';--顶距\
+        layout_gravity='center|top';--重力\
+        --左:left 右:right 中:center 顶:top 底:bottom\
+        elevation='0dp';--阴影\
+        layout_width='fill';--宽度\
+        layout_height='8%h';--高度\
+        CardBackgroundColor='#ffffffff';--颜色\
+        radius='17dp';--圆角\
+\
+        {\
+          CardView;--卡片控件\
+          layout_margin='';--边距\
+          layout_gravity='';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='fill';--宽度\
+          layout_height='8%h';--高度\
+          -- layout_marginTop='';--顶距\
+          CardBackgroundColor='#ffffffff';--颜色\
+          radius='';--圆角\
+          id='ke';\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|left';--重力属性\
+            textColor='#000000';--文字颜色\
+            text=AdapLan('设置','Settings');--显示的文字\
+            textSize='17dp';--文字大小\
+            layout_margin='8dp';--边距\
+            id='ke';\
+          };\
+\
+        };\
+\
+\
+\
+\
+\
+      };\
+\
+      {\
+        CardView;--卡片控件\
+        layout_margin='';--边距\
+        layout_marginLeft='13dp';--左距\
+        layout_marginRight='13dp';--右距\
+        layout_marginTop='65%h';--顶距\
+        layout_gravity='center|top';--重力\
+        --左:left 右:right 中:center 顶:top 底:bottom\
+        elevation='0dp';--阴影\
+        layout_width='fill';--宽度\
+        layout_height='35%h';--高度\
+        CardBackgroundColor='';--颜色\
+        radius='17dp';--圆角\
+\
+\
+    \
+    };\
+  };\
+\
+  };\
+\
+};\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+drawerLayout.addView(sidebar)--替身加入\
+sidebar.LayoutParams.gravity=3--设置为右侧侧栏\
+--sidebar=fakesb--由替身代替原侧滑执行其它任务\
+\
+\
+ka.onClick=function(v)\
+  ka.setCardBackgroundColor(0xFFE7E8EA)\
+  task(80,function()\
+    ka.setCardBackgroundColor(0xffffffff)\
+  end)\
+\
+  进入子页面(\"阅卷\")\
+end;\
+kb.onClick=function(v)\
+  kb.setCardBackgroundColor(0xFFE7E8EA)\
+  task(80,function()\
+    kb.setCardBackgroundColor(0xffffffff)\
+  end)\
+\
+  进入子页面(\"组卷平台\")\
+end;\
+kc.onClick=function(v)\
+  kc.setCardBackgroundColor(0xFFE7E8EA)\
+  task(80,function()\
+    kc.setCardBackgroundColor(0xffffffff)\
+  end)\
+\
+  加载网页(\"https://mjz.xiaoxianai.cn/login\")\
+end;\
+kd.onClick=function(v)\
+  kd.setCardBackgroundColor(0xFFE7E8EA)\
+  task(80,function()\
+    kd.setCardBackgroundColor(0xffffffff)\
+  end)\
+\
+  进入子页面(\"咨询\")\
+end;\
+ke.onClick=function(v)\
+  ke.setCardBackgroundColor(0xFFE7E8EA)\
+  task(80,function()\
+    ke.setCardBackgroundColor(0xffffffff)\
+  end)\
+\
+  进入子页面(\"设置\")\
+end;\
+ks.onClick=function(v)\
+  ks.setCardBackgroundColor(0xFFE7E8EA)\
+  task(80,function()\
+    ks.setCardBackgroundColor(0xffffffff)\
+  end)\
+\
+  进入子页面(\"问题\")\
+end;\
+--[[重写按键监听，以允许通过返回键关闭右侧侧滑\
+function onKeyDown(key,event)\
+  if(key==4)then\
+    if drawerLayout.isDrawerOpen(3) or drawerLayout.isDrawerOpen(5) then\
+      drawerLayout.closeDrawer(3)\
+      drawerLayout.closeDrawer(5)\
+    elseif(webView.canGoBack())then\
+      webView.goBack()\
+    else\
+      this.finish()\
+    end\
+    return true\
+  end\
+end\
+\
+\
+]]\
+for Setting4 in io.lines(\"/storage/emulated/0/ZujuanDati/files/Setting4.txt\") do\
+  --  print(Setting)\
+  if Setting4 =='1' then\
+\
+\
+    --防止返回键退出\
+    function onKeyDown(key,event)\
+      if(key==4)then\
+        -- print\"您的答题进度可能没有保存，软件智能为您屏蔽返回按钮，若您正在答题，退出请点击页面最下方蓝色提交按钮。\"\
+        print(AdapLan(\"您的答题进度可能没有保存，软件智能为您屏蔽返回按钮，若您正在答题，退出请点击页面最下方蓝色提交按钮。\",\"Your answer progress may not be saved, the software intelligently blocks the return button for you, if you are answering, please click the blue submit button at the bottom of the page to exit.\"))\
+        return true\
+      end\
+    end\
+\
+  end\
+end\
+for Setting5 in io.lines(\"/storage/emulated/0/ZujuanDati/files/Setting5.txt\") do\
+  --  print(Setting)\
+  if Setting5 =='1' then\
+\
+\
+    加载Js([==[\
+//18:22-08\
+var JsHDued=function(v){try {new Function(v)();} catch(e) {setTimeout(function (){JsHDued(v);},100);};};\
+JsHDued(`document.getElementsByClassName(\"styles__title___3Ydgw\")[2].click();`);\
+\
+]==])\
+  end\
+end\
+require \"import\"\
+import \"android.app.*\"\
+import \"android.os.*\"\
+import \"android.widget.*\"\
+import \"android.view.*\"\
+import \"android.content.Context\"\
+import \"android.content.Intent\"\
+import \"android.app.PendingIntent\"\
+import \"android.app.Notification\"\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+import \"android.provider.Settings\"\
+import \"android.app.ProgressDialog\"\
+import \"android.app.AlertDialog\"\
+local packinfo = this.getPackageManager().getPackageInfo(this.getPackageName(),((32552732/2/2-8183)/10000-6-231)/9)\
+local appinfo = this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+local versionName = tostring(packinfo.versionName)-- 版本名（cc.nowtime）\
+local versionCode= tonumber(packinfo.versionCode)-- 版本号（10010）\
+urla=\"https://share.weiyun.com/sGW4OLMY\"--换自己的远程链接\
+Http.get(urla,nil,nil,nil,function(code,content)\
+  local 版本号=content:match(\"【版本号】(.-)【版本号】\")\
+  if tostring(versionCode)<tostring(版本号) then\
+\
+    for Setting in io.lines(\"/storage/emulated/0/ZujuanDati/files/Setting.txt\") do\
+      --  print(Setting)\
+      if Setting =='1' then\
+        require \"import\"\
+        import \"android.app.*\"\
+        import \"android.os.*\"\
+        import \"android.widget.*\"\
+        import \"android.view.*\"\
+        import \"android.content.Context\"\
+        import \"android.content.Intent\"\
+        import \"android.app.PendingIntent\"\
+        import \"android.app.Notification\"\
+        urla=\"https://wds.ecsxs.com/217350.html\"--换自己的远程链接\
+        Http.get(urla,nil,nil,nil,function(code,content)\
+          local 链接=content:match(\"【lj】(.-)【lj】\")\
+          local bbh=content:match(\"【bbh】(.-)【bbh】\")\
+\
+          downloadManager=activity.getSystemService(Context.DOWNLOAD_SERVICE);\
+          url=Uri.parse(链接);\
+          request=DownloadManager.Request(url);\
+          request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE|DownloadManager.Request.NETWORK_WIFI);\
+          request.setDestinationInExternalPublicDir(\"Download/组卷答题下载/我的应用/\",'组卷•答题新版本'..bbh..'.apk');\
+          request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);\
+          downloadManager.enqueue(request);\
+          require \"import\"\
+          import \"android.app.*\"\
+          import \"android.os.*\"\
+          import \"android.widget.*\"\
+          import \"android.view.*\"\
+          import \"android.content.Context\"\
+          import \"android.content.Intent\"\
+          import \"android.app.PendingIntent\"\
+          import \"android.app.Notification\"\
+          mBuilder = Notification.Builder(this);\
+          mBuilder.setSmallIcon(R.drawable.icon)--设置图标\
+          mBuilder.setContentTitle(\"已自动为您下载组卷答题新版本\");--大标\
+          mBuilder.setContentText(\"请在通知栏查看进度，完成后轻触通知即可安装\");--小标\
+          mBuilder.setAutoCancel(true);--设置这个标志当用户单击面板就可以让通知将自动取消\
+          mBuilder.setDefaults( Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE) --使用默认震动\
+          notificationManager =activity.getSystemService(Context.NOTIFICATION_SERVICE)\
+          notificationIntent = Intent(\"android.intent.action.VIEW\");\
+          notificationIntent.setClassName(this.getPackageName(),\"com.androlua.Welcome\")\
+          pendingIntent = PendingIntent.getActivity(activity.getApplicationContext(), 0, notificationIntent, Intent.FLAG_ACTIVITY_NEW_TASK);\
+          mBuilder.setContentIntent(pendingIntent).setAutoCancel(false)\
+          notificationManager.notify(12, mBuilder.build()) --发送通知\
+          require \"import\"\
+          import \"android.app.*\"\
+          import \"android.os.*\"\
+          import \"android.widget.*\"\
+          import \"android.view.*\"\
+          import \"android.content.Context\"\
+          import \"android.content.Intent\"\
+          import \"android.app.PendingIntent\"\
+          import \"android.app.Notification\"\
+          mBuilder = Notification.Builder(this);\
+          mBuilder.setSmallIcon(R.drawable.icon)--设置图标\
+          mBuilder.setContentTitle(\"我为什么会自动下载更新？\");--大标\
+          mBuilder.setContentText(\"您可以在组卷答题-侧滑栏-设置-自动下载更新进行更改\");--小标\
+          mBuilder.setAutoCancel(true);--设置这个标志当用户单击面板就可以让通知将自动取消\
+          mBuilder.setDefaults( Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE) --使用默认震动\
+          notificationManager =activity.getSystemService(Context.NOTIFICATION_SERVICE)\
+          notificationIntent = Intent(\"android.intent.action.VIEW\");\
+          notificationIntent.setClassName(this.getPackageName(),\"com.androlua.Welcome\")\
+          pendingIntent = PendingIntent.getActivity(activity.getApplicationContext(), 0, notificationIntent, Intent.FLAG_ACTIVITY_NEW_TASK);\
+          mBuilder.setContentIntent(pendingIntent).setAutoCancel(false)\
+          notificationManager.notify(22, mBuilder.build()) --发送通知\
+          require \"import\"\
+          import \"android.app.*\"\
+          import \"android.os.*\"\
+          import \"android.widget.*\"\
+          import \"android.view.*\"\
+          import \"android.content.Context\"\
+          import \"android.content.Intent\"\
+          import \"android.app.PendingIntent\"\
+          import \"android.app.Notification\"\
+          mBuilder = Notification.Builder(this);\
+          mBuilder.setSmallIcon(R.drawable.icon)--设置图标\
+          mBuilder.setContentTitle(\"我下载的文件在哪里？\");--大标\
+          mBuilder.setContentText(\"/storage/emulated/0/Download/组卷答题/我的应用/组卷答题新版本.apk\");--小标\
+          mBuilder.setAutoCancel(true);--设置这个标志当用户单击面板就可以让通知将自动取消\
+          mBuilder.setDefaults( Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE) --使用默认震动\
+          notificationManager =activity.getSystemService(Context.NOTIFICATION_SERVICE)\
+          notificationIntent = Intent(\"android.intent.action.VIEW\");\
+          notificationIntent.setClassName(this.getPackageName(),\"com.androlua.Welcome\")\
+          pendingIntent = PendingIntent.getActivity(activity.getApplicationContext(), 0, notificationIntent, Intent.FLAG_ACTIVITY_NEW_TASK);\
+          mBuilder.setContentIntent(pendingIntent).setAutoCancel(false)\
+          notificationManager.notify(42, mBuilder.build()) --发送通知\
+        end)\
+\
+      else\
+        --[[  dialog=AlertDialog.Builder(this)\
+          .setTitle(\"新版本引入？\")\
+          .setMessage(\"一个更新的版本可能会更稳定，修复一些已知问题，并可能带来一些您期待已久的新功能，推荐您更新！\")\
+          .setPositiveButton(\"现在就开始吧\",{onClick=function(v)\
+              进入子页面(\"更新\");end})\
+          .setNegativeButton(\"稍候再提醒我\",{onClick=function(v) print\"您可以退出后在此进入APP检测更新，或在侧滑栏设置中检查更新\";end})\
+          .show()\
+          dialog.create()\
+          import \"android.graphics.Color\"\
+          dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(0xff1761e8)\
+          dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(0xff1761e8)\
+          dialog.getButton(dialog.BUTTON_NEUTRAL).setTextColor(0xff1761e8)]]\
+        EMUI=\
+        {\
+          LinearLayout,\
+          orientation='vertical';--横向或者纵向布局\
+          layout_width='fill';--布局宽度\
+          layout_height='fill';--布局高度\
+          background='';--布局背景颜色\
+          id='dia';\
+          {\
+            CardView;--卡片控件\
+            layout_margin='';--边距\
+            layout_gravity='center';--重力\
+            --左:left 右:right 中:center 顶:top 底:bottom\
+            elevation='0dp';--阴影\
+            layout_width='fill';--宽度\
+            layout_height='fill';--高度\
+            CardBackgroundColor='#ffffffff';--颜色\
+            radius='';--圆角\
+            id='dia';\
+            {\
+              ImageView;--图片控件\
+              src='mohu.jpg';--图片路径\
+              layout_width='fill';--图片宽度\
+              layout_height='fill';--图片高度\
+              scaleType='centerCrop';--图片显示类型\
+              id='pic';\
+\
+\
+            };\
+            {\
+              CardView;--卡片控件\
+              layout_margin='';--边距\
+              layout_gravity='center';--重力\
+              --左:left 右:right 中:center 顶:top 底:bottom\
+              elevation='1dp';--阴影\
+              layout_width='80%w';--宽度\
+              layout_height='wrap';--高度\
+              CardBackgroundColor='#F1f3f5';--颜色\
+              radius='21dp';--圆角\
+              {\
+                LinearLayout,--线性布局\
+                orientation='vertical',--方向\
+                layout_width='fill',--宽度\
+                layout_height='wrap',--高度\
+                background='',--背景颜色或图片路径\
+\
+                {\
+                  CardView;--卡片控件\
+                  layout_marginTop='10dp';--顶距\
+                  layout_marginLeft='18dp';--左距\
+                  layout_gravity='left';--重力\
+                  --左:left 右:right 中:center 顶:top 底:bottom\
+                  elevation='0dp';--阴影\
+                  layout_width='wrap';--宽度\
+                  layout_height='40dp';--高度\
+                  CardBackgroundColor='#F1F3F5';--颜色\
+                  radius='8dp';--圆角\
+                  {\
+                    TextView;--文本控件\
+                    layout_width='fill';--文本宽度\
+                    layout_height='fill';--文本高度\
+                    gravity='';--重力属性\
+                    textColor='#ff000000';--文字颜色\
+                    text=AdapLan(\"新版本引入？\",\"New version introduced?\");--显示的文字\
+                    textSize='21sp';--文字大小\
+                  };\
+                };\
+                {\
+                  CardView;--卡片控件\
+                  layout_margin='5dp';--边距\
+                  layout_marginLeft='18dp';--左距\
+                  layout_marginRight='18dp';--右距\
+                  layout_gravity='left';--重力\
+                  --左:left 右:right 中:center 顶:top 底:bottom\
+                  elevation='0dp';--阴影\
+                  layout_width='wrap';--宽度\
+                  layout_height='wrap';--高度\
+                  CardBackgroundColor='#F1F3F5';--颜色\
+                  radius='8dp';--圆角\
+                  {\
+                    TextView;--文本控件\
+                    layout_width='fill';--文本宽度\
+                    layout_height='fill';--文本高度\
+                    gravity='center|left';--重力属性\
+                    textColor='#ff000000';--文字颜色\
+                    text=AdapLan(\"海内存知己，天涯若比邻.\\n一个更新的版本可能会更稳定，修复一些已知问题，并可能带来一些您期待已久的新功能，推荐您更新！\",\"The sea has a confidant, and the end of the world is like a neighbor.\\n An updated version may be more stable, fix some known issues, and may bring some new features that you have been waiting for for a long time, and it is recommended that you update!\");--显示的文字\
+                    textSize='16sp';--文字大小\
+                  };\
+                };\
+                {\
+                  CardView;--卡片控件\
+                  layout_margin='8dp';--边距\
+                  layout_marginLeft='40dp';--左距\
+                  layout_marginRight='40dp';--右距\
+                  layout_gravity='center';--重力\
+                  --左:left 右:right 中:center 顶:top 底:bottom\
+                  elevation='0dp';--阴影\
+                  layout_width='fill';--宽度\
+                  layout_height='40dp';--高度\
+                  CardBackgroundColor='#F1F3F5';--颜色\
+                  radius='8dp';--圆角\
+                  id='积极';\
+\
+                  {\
+                    CardView;--卡片控件\
+                    layout_margin='';--边距\
+                    layout_gravity='center|left';--重力\
+                    --左:left 右:right 中:center 顶:top 底:bottom\
+                    elevation='0dp';--阴影\
+                    layout_width='wrap';--宽度\
+                    layout_height='wrap';--高度\
+                    CardBackgroundColor='#F1F3F5';--颜色\
+                    radius='8dp';--圆角\
+                    id='消极';\
+\
+                    {\
+                      TextView;--文本控件\
+                      layout_width='fill';--文本宽度\
+                      layout_height='fill';--文本高度\
+                      gravity='center|left';--重力属性\
+                      textColor='#FF075AF4';--文字颜色\
+                      text=AdapLan(\"稍后\",\"Later\");--显示的文字\
+                      textSize='16dp';--文字大小\
+\
+                    };\
+                  };\
+                  {\
+                    TextView;--文本控件\
+                    layout_width='fill';--文本宽度\
+                    layout_height='fill';--文本高度\
+                    gravity='center';--重力属性\
+                    textColor='#FFA9AAAC';--文字颜色\
+                    text='|';--显示的文字\
+                    textSize='20dp';--文字大小\
+                  };\
+                  {\
+                    CardView;--卡片控件\
+                    layout_margin='';--边距\
+                    layout_gravity='center|right';--重力\
+                    --左:left 右:right 中:center 顶:top 底:bottom\
+                    elevation='0dp';--阴影\
+                    layout_width='wrap';--宽度\
+                    layout_height='wrap';--高度\
+                    CardBackgroundColor='#F1F3F5';--颜色\
+                    radius='8dp';--圆角\
+                    id='积极';\
+                    {\
+                      TextView;--文本控件\
+                      layout_width='fill';--文本宽度\
+                      layout_height='fill';--文本高度\
+                      gravity='center|right';--重力属性\
+                      textColor='#FF075AF4';--文字颜色\
+                      text=AdapLan(\"现在开始\",\"Now\");--显示的文字\
+                      textSize='16dp';--文字大小\
+                      --  id='积极';\
+                    };\
+                  };\
+                };\
+              };\
+            };\
+          };\
+        };\
+        --activity.setContentView(loadlayout(对话框))\
+        drawerLayout.getParent().addView(loadlayout(EMUI))\
+        积极.onClick=function()--点击事件\
+          进入子页面('更新')\
+\
+          dia.setVisibility(View.GONE)\
+\
+        end;\
+        消极.onClick=function()--点击事件\
+\
+          dia.setVisibility(View.GONE)\
+        end;\
+        pic.onClick=function()--点击事件\
+\
+          dia.setVisibility(View.GONE)\
+        end; \
+\
+      end\
+    end\
+\
+\
+\
+  else\
+  end\
+end) \
+" ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+\
+\
+  \
+\
+\
+--接收参数\
+浏览器对象，新标题=..." ;
+      } ;
+  ["web_control"]	= {
+      [1]	= {
+          ["remove_element"]	= "" ;
+          ["url"]	= "https://mjz.xiaoxianai.cn" ;
+          ["js"]	= "//17:07-28\
+document.getElementsByClassName(\"styles__txt1___1uqhM\")[0].setAttribute(\"style\",\"display:none\");\
+\
+//17:09-20\
+//**(mjz.xiaoxianai.cn/)**//\
+if(window.location.href.indexOf('mjz.xiaoxianai.cn/')>-1){\
+document.getElementsByTagName(\"img\")[5].setAttribute(\"style\",\"display:none\");\
+}\
+document.getElementsByClassName(\"styles__scoreWrap___2AcdZ\")[0].setAttribute(\"style\",\"display:none\");\
+document.getElementsByClassName(\"styles__paperWrap___3yZcY\")[0].setAttribute(\"style\",\"display:none\");\
+document.getElementsByTagName(\"img\")[5].setAttribute(\"style\",\"display:none\");\
+" ;
+          } ;
+      } ;
+  ["fltBtn"]	= {
+      ["显示"]	= false ;
+      ["图标"]	= "" ;
+      ["点击事件"]	= "require \"import\"\
+import \"android.app.*\"\
+import \"android.os.*\"\
+import \"android.widget.*\"\
+import \"android.view.*\"\
+import \"android.content.Context\"\
+import \"android.content.Intent\"\
+import \"android.app.PendingIntent\"\
+import \"android.app.Notification\"\
+\
+\
+print\"由于系统原因，请先拍照后再上传，注意看清题号😘\"\
+for account in io.lines(\"/storage/emulated/0/ZujuanDati/相机配置.txt\") do\
+    local content=account\
+    local 序号=content:match(\"【序号】(.-)【序号】\")\
+    local 网址=content:match(\"【网址】(.-)【网址】\")\
+\
+if 序号=='mp1' then\
+  if pcall(function() activity.getPackageManager().getPackageInfo(\"com.android.camera\",0) end) then\
+  packageName=\"com.android.camera\"\
+import \"android.content.Intent\"\
+import \"android.content.pm.PackageManager\"\
+manager = activity.getPackageManager()\
+open = manager.getLaunchIntentForPackage(packageName)\
+this.startActivity(open)\
+ else\
+  packageName=\"com.huawei.camera\"\
+import \"android.content.Intent\"\
+import \"android.content.pm.PackageManager\"\
+manager = activity.getPackageManager()\
+open = manager.getLaunchIntentForPackage(packageName)\
+this.startActivity(open)\
+\
+end\
+\
+elseif 序号=='mp2' then\
+if pcall(function() activity.getPackageManager().getPackageInfo(\"com.intsig.camscanner\",0) end) then\
+  packageName=\"com.intsig.camscanner\"\
+import \"android.content.Intent\"\
+import \"android.content.pm.PackageManager\"\
+manager = activity.getPackageManager()\
+open = manager.getLaunchIntentForPackage(packageName)\
+this.startActivity(open)\
+ else\
+ function 商店搜索(包名)\
+  import \"android.content.Intent\"\
+  import \"android.net.Uri\"\
+  intent = Intent(\"android.intent.action.VIEW\")\
+  intent.setData(Uri.parse(\"market://details?id=\"..包名))\
+  this.startActivity(intent)\
+end\
+--调用方法\
+商店搜索(\"com.intsig.camscanner\")\
+\
+end\
+\
+elseif 序号=='mp3' then\
+if pcall(function() activity.getPackageManager().getPackageInfo(\"com.google.android.GoogleCamera\",0) end) then\
+  packageName=\"com.google.android.GoogleCamera\"\
+import \"android.content.Intent\"\
+import \"android.content.pm.PackageManager\"\
+manager = activity.getPackageManager()\
+open = manager.getLaunchIntentForPackage(packageName)\
+this.startActivity(open)\
+ else\
+ function 商店搜索(包名)\
+  import \"android.content.Intent\"\
+  import \"android.net.Uri\"\
+  intent = Intent(\"android.intent.action.VIEW\")\
+  intent.setData(Uri.parse(\"market://details?id=\"..包名))\
+  this.startActivity(intent)\
+end\
+--调用方法\
+商店搜索(\"com.google.android.GoogleCamera\")\
+\
+end\
+\
+elseif 序号=='mp4' then\
+if pcall(function() activity.getPackageManager().getPackageInfo(\"com.uzero.baimiao\",0) end) then\
+  packageName=\"com.uzero.baimiao\"\
+import \"android.content.Intent\"\
+import \"android.content.pm.PackageManager\"\
+manager = activity.getPackageManager()\
+open = manager.getLaunchIntentForPackage(packageName)\
+this.startActivity(open)\
+ else\
+ function 商店搜索(包名)\
+  import \"android.content.Intent\"\
+  import \"android.net.Uri\"\
+  intent = Intent(\"android.intent.action.VIEW\")\
+  intent.setData(Uri.parse(\"market://details?id=\"..包名))\
+  this.startActivity(intent)\
+end\
+--调用方法\
+商店搜索(\"com.uzero.baimiao\")\
+\
+end\
+\
+else\
+\
+ if pcall(function() activity.getPackageManager().getPackageInfo(网址,0) end) then\
+  packageName=网址\
+import \"android.content.Intent\"\
+import \"android.content.pm.PackageManager\"\
+manager = activity.getPackageManager()\
+open = manager.getLaunchIntentForPackage(packageName)\
+this.startActivity(open)\
+ else\
+ function 商店搜索(包名)\
+  import \"android.content.Intent\"\
+  import \"android.net.Uri\"\
+  intent = Intent(\"android.intent.action.VIEW\")\
+  intent.setData(Uri.parse(\"market://details?id=\"..包名))\
+  this.startActivity(intent)\
+end\
+--调用方法\
+商店搜索(网址)\
+\
+end\
+\
+\
+\
+      end\
+\
+end\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+" ;
+      } ;
+  ["view_attribute"]	= {
+      ["顶栏标题"]	= "组卷•答题" ;
+      ["侧滑栏宽度"]	= "300dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏高度"]	= "60dp" ;
+      } ;
+  ["toolbar"]	= {
+      ["输入栏模式"]	= false ;
+      ["启用搜索功能"]	= false ;
+      ["menus"]	= {
+          } ;
+      ["icon_btns"]	= {
+          [1]	= {
+              ["onClick"]	= "网页后退()" ;
+              ["icon"]	= "IMG_20221106_091439" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "刷新网页()\
+      for Setting4 in io.lines(\"/storage/emulated/0/ZujuanDati/files/Setting4.txt\") do\
+--  print(Setting)\
+  if Setting4 =='1' then\
+  \
+\
+--防止返回键退出\
+function onKeyDown(key,event)\
+  if(key==4)then\
+      print\"您的答题进度可能没有保存，软件智能为您屏蔽返回按钮，若您正在答题，退出请点击页面最下方蓝色提交按钮。\"\
+\
+    return true\
+    end\
+end\
+\
+end\
+end\
+ for Setting5 in io.lines(\"/storage/emulated/0/ZujuanDati/files/Setting5.txt\") do\
+--  print(Setting)\
+  if Setting5 =='1' then\
+  \
+\
+加载Js([==[\
+//18:22-08\
+var JsHDued=function(v){try {new Function(v)();} catch(e) {setTimeout(function (){JsHDued(v);},100);};};\
+JsHDued(`document.getElementsByClassName(\"styles__title___3Ydgw\")[2].click();`);\
+\
+]==])\
+end\
+end\
+" ;
+              ["icon"]	= "IMG_20221103_150431" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "EMUI3=\
+{\
+  LinearLayout,\
+  orientation='vertical';--横向或者纵向布局\
+  layout_width='fill';--布局宽度\
+  layout_height='fill';--布局高度\
+  background='';--布局背景颜色\
+  id='dia3';\
+  {\
+    CardView;--卡片控件\
+    layout_margin='';--边距\
+    layout_gravity='center';--重力\
+    --左:left 右:right 中:center 顶:top 底:bottom\
+    elevation='0dp';--阴影\
+    layout_width='fill';--宽度\
+    layout_height='fill';--高度\
+    CardBackgroundColor='#ffffffff';--颜色\
+    radius='';--圆角\
+    id='dia3';\
+    {\
+      ImageView;--图片控件\
+      src='mohu.jpg';--图片路径\
+      layout_width='fill';--图片宽度\
+      layout_height='fill';--图片高度\
+      scaleType='centerCrop';--图片显示类型\
+      id='pic';\
+ \
+\
+    };\
+    {\
+      CardView;--卡片控件\
+      layout_margin='';--边距\
+      layout_gravity='center';--重力\
+      --左:left 右:right 中:center 顶:top 底:bottom\
+      elevation='1dp';--阴影\
+      layout_width='80%w';--宽度\
+      layout_height='wrap';--高度\
+      CardBackgroundColor='#F1f3f5';--颜色\
+      radius='21dp';--圆角\
+      {\
+        LinearLayout,--线性布局\
+        orientation='vertical',--方向\
+        layout_width='fill',--宽度\
+        layout_height='wrap',--高度\
+        background='',--背景颜色或图片路径\
+\
+        {\
+          CardView;--卡片控件\
+          layout_marginTop='10dp';--顶距\
+          layout_marginLeft='18dp';--左距\
+          layout_gravity='left';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='wrap';--宽度\
+          layout_height='40dp';--高度\
+          CardBackgroundColor='#F1F3F5';--颜色\
+          radius='8dp';--圆角\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='';--重力属性\
+            textColor='#ff000000';--文字颜色\
+            text=AdapLan(\"结束 E测评 的运行？\",\"End the run of the Application?\");--显示的文字\
+            textSize='21sp';--文字大小\
+          };\
+        };\
+        {\
+          CardView;--卡片控件\
+          layout_margin='5dp';--边距\
+          layout_marginLeft='18dp';--左距\
+          layout_marginRight='18dp';--右距\
+          layout_gravity='left';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='wrap';--宽度\
+          layout_height='wrap';--高度\
+          CardBackgroundColor='#F1F3F5';--颜色\
+          radius='8dp';--圆角\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|left';--重力属性\
+            textColor='#ff000000';--文字颜色\
+            text=AdapLan(\"退出软件后，您未提交的更改将不会保存\",\"After exiting the software, changes you have not committed will not be saved.\");--显示的文字\
+            textSize='16sp';--文字大小\
+          };\
+        };\
+        {\
+          CardView;--卡片控件\
+          layout_margin='8dp';--边距\
+          layout_marginLeft='40dp';--左距\
+          layout_marginRight='40dp';--右距\
+          layout_gravity='center';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='fill';--宽度\
+          layout_height='40dp';--高度\
+          CardBackgroundColor='#F1F3F5';--颜色\
+          radius='8dp';--圆角\
+          id='积极';\
+          {\
+            CardView;--卡片控件\
+            layout_margin='';--边距\
+            layout_gravity='center|left';--重力\
+            --左:left 右:right 中:center 顶:top 底:bottom\
+            elevation='0dp';--阴影\
+            layout_width='wrap';--宽度\
+            layout_height='wrap';--高度\
+            CardBackgroundColor='#F1F3F5';--颜色\
+            radius='8dp';--圆角\
+            id='消极';\
+\
+            {\
+              TextView;--文本控件\
+              layout_width='fill';--文本宽度\
+              layout_height='fill';--文本高度\
+              gravity='center|left';--重力属性\
+              textColor='#FF075AF4';--文字颜色\
+              text=AdapLan(\"取消\",\"Cancel\");--显示的文字\
+              textSize='16dp';--文字大小\
+\
+            };\
+          };\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center';--重力属性\
+            textColor='#FFA9AAAC';--文字颜色\
+            text='|';--显示的文字\
+            textSize='20dp';--文字大小\
+          };\
+         {\
+            CardView;--卡片控件\
+            layout_margin='';--边距\
+            layout_gravity='center|right';--重力\
+            --左:left 右:right 中:center 顶:top 底:bottom\
+            elevation='0dp';--阴影\
+            layout_width='wrap';--宽度\
+            layout_height='wrap';--高度\
+            CardBackgroundColor='#F1F3F5';--颜色\
+            radius='8dp';--圆角\
+            id='积极';\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|right';--重力属性\
+            textColor='#ECFF1734';--文字颜色\
+            text=AdapLan(\"结束运行\",\"END THE RUN\");--显示的文字\
+            textSize='16dp';--文字大小\
+          --  id='积极';\
+          };\
+        };\
+        };\
+      };\
+    };\
+  };\
+};\
+--activity.setContentView(loadlayout(EMUI3))\
+drawerLayout.getParent().addView(loadlayout(EMUI3))\
+积极.onClick=function()--点击事件\
+  退出程序()\
+end;\
+消极.onClick=function()--点击事件\
+\
+  dia3.setVisibility(View.GONE)\
+end;\
+pic.onClick=function()--点击事件\
+\
+  dia3.setVisibility(View.GONE)\
+end;" ;
+              ["icon"]	= "IMG_20221103_150446" ;
+              } ;
+          } ;
+      ["搜索框提示"]	= "" ;
+      ["搜索URL"]	= "" ;
+      } ;
+  ["colors"]	= {
+      ["导航栏"]	= "#ff2c2e43" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["顶栏"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["进度条"]	= "#00000000" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["悬浮按钮"]	= "#ff33a7aa" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      } ;
+  ["web"]	= {
+      ["启用长按菜单"]	= false ;
+      ["浏览器用户标识"]	= "自定义" ;
+      ["启动网页"]	= "https://mjz.xiaoxianai.cn" ;
+      ["启用进度条"]	= false ;
+      ["customUa"]	= "Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10" ;
+      ["支持打开外部应用"]	= true ;
+      ["网页沉浸"]	= true ;
+      } ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["启用启动图"]	= false ;
+      ["显示状态栏"]	= true ;
+      ["支持滑动页面"]	= false ;
+      } ;
+  } ;

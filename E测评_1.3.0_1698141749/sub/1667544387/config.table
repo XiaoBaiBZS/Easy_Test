@@ -1,0 +1,795 @@
+{
+  ["toolbar"]	= {
+      ["搜索框提示"]	= "" ;
+      ["启用搜索功能"]	= false ;
+      ["icon_btns"]	= {
+          [1]	= {
+              ["onClick"]	= "网页后退()" ;
+              ["icon"]	= "IMG_20221106_091439" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "刷新网页()" ;
+              ["icon"]	= "IMG_20221103_150431" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "EMUI3=\
+{\
+  LinearLayout,\
+  orientation='vertical';--横向或者纵向布局\
+  layout_width='fill';--布局宽度\
+  layout_height='fill';--布局高度\
+  background='';--布局背景颜色\
+  id='dia3';\
+  {\
+    CardView;--卡片控件\
+    layout_margin='';--边距\
+    layout_gravity='center';--重力\
+    --左:left 右:right 中:center 顶:top 底:bottom\
+    elevation='0dp';--阴影\
+    layout_width='fill';--宽度\
+    layout_height='fill';--高度\
+    CardBackgroundColor='#ffffffff';--颜色\
+    radius='';--圆角\
+    id='dia3';\
+    {\
+      ImageView;--图片控件\
+      src='mohu.jpg';--图片路径\
+      layout_width='fill';--图片宽度\
+      layout_height='fill';--图片高度\
+      scaleType='centerCrop';--图片显示类型\
+      id='pic';\
+\
+\
+    };\
+    {\
+      CardView;--卡片控件\
+      layout_margin='';--边距\
+      layout_gravity='center';--重力\
+      --左:left 右:right 中:center 顶:top 底:bottom\
+      elevation='1dp';--阴影\
+      layout_width='80%w';--宽度\
+      layout_height='wrap';--高度\
+      CardBackgroundColor='#F1f3f5';--颜色\
+      radius='21dp';--圆角\
+      {\
+        LinearLayout,--线性布局\
+        orientation='vertical',--方向\
+        layout_width='fill',--宽度\
+        layout_height='wrap',--高度\
+        background='',--背景颜色或图片路径\
+\
+        {\
+          CardView;--卡片控件\
+          layout_marginTop='10dp';--顶距\
+          layout_marginLeft='18dp';--左距\
+          layout_gravity='left';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='wrap';--宽度\
+          layout_height='40dp';--高度\
+          CardBackgroundColor='#F1F3F5';--颜色\
+          radius='8dp';--圆角\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='';--重力属性\
+            textColor='#ff000000';--文字颜色\
+            text=AdapLan(\"退出 阅卷平台 ？\",\"Exit the Grading Platform ?\");--显示的文字\
+            textSize='21sp';--文字大小\
+          };\
+        };\
+        {\
+          CardView;--卡片控件\
+          layout_margin='5dp';--边距\
+          layout_marginLeft='18dp';--左距\
+          layout_marginRight='18dp';--右距\
+          layout_gravity='left';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='wrap';--宽度\
+          layout_height='wrap';--高度\
+          CardBackgroundColor='#F1F3F5';--颜色\
+          radius='8dp';--圆角\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|left';--重力属性\
+            textColor='#ff000000';--文字颜色\
+            text=AdapLan(\"退出页面后，您未提交的更改将不会保存\",\"After exiting this page , changes you have not committed will not be saved.\");--显示的文字\
+            textSize='16sp';--文字大小\
+          };\
+        };\
+        {\
+          CardView;--卡片控件\
+          layout_margin='8dp';--边距\
+          layout_marginLeft='40dp';--左距\
+          layout_marginRight='40dp';--右距\
+          layout_gravity='center';--重力\
+          --左:left 右:right 中:center 顶:top 底:bottom\
+          elevation='0dp';--阴影\
+          layout_width='fill';--宽度\
+          layout_height='40dp';--高度\
+          CardBackgroundColor='#F1F3F5';--颜色\
+          radius='8dp';--圆角\
+          id='积极';\
+          {\
+            CardView;--卡片控件\
+            layout_margin='';--边距\
+            layout_gravity='center|left';--重力\
+            --左:left 右:right 中:center 顶:top 底:bottom\
+            elevation='0dp';--阴影\
+            layout_width='wrap';--宽度\
+            layout_height='wrap';--高度\
+            CardBackgroundColor='#F1F3F5';--颜色\
+            radius='8dp';--圆角\
+            id='消极';\
+\
+            {\
+              TextView;--文本控件\
+              layout_width='fill';--文本宽度\
+              layout_height='fill';--文本高度\
+              gravity='center|left';--重力属性\
+              textColor='#FF075AF4';--文字颜色\
+              text=AdapLan(\"取消\",\"Cancel\");--显示的文字\
+              textSize='16dp';--文字大小\
+\
+            };\
+          };\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center';--重力属性\
+            textColor='#FFA9AAAC';--文字颜色\
+            text='|';--显示的文字\
+            textSize='20dp';--文字大小\
+          };\
+         {\
+            CardView;--卡片控件\
+            layout_margin='';--边距\
+            layout_gravity='center|right';--重力\
+            --左:left 右:right 中:center 顶:top 底:bottom\
+            elevation='0dp';--阴影\
+            layout_width='wrap';--宽度\
+            layout_height='wrap';--高度\
+            CardBackgroundColor='#F1F3F5';--颜色\
+            radius='8dp';--圆角\
+            id='积极';\
+          {\
+            TextView;--文本控件\
+            layout_width='fill';--文本宽度\
+            layout_height='fill';--文本高度\
+            gravity='center|right';--重力属性\
+            textColor='#ECFF1734';--文字颜色\
+            text=AdapLan(\"退出阅卷平台\",\"EXIT THIS PAGE\");--显示的文字\
+            textSize='16dp';--文字大小\
+          --  id='积极';\
+          };\
+        };\
+        };\
+      };\
+    };\
+  };\
+};\
+--activity.setContentView(loadlayout(EMUI3))\
+drawerLayout.getParent().addView(loadlayout(EMUI3))\
+积极.onClick=function()--点击事件\
+  退出程序()\
+end;\
+消极.onClick=function()--点击事件\
+\
+  dia3.setVisibility(View.GONE)\
+end;\
+pic.onClick=function()--点击事件\
+\
+  dia3.setVisibility(View.GONE)\
+end;" ;
+              ["icon"]	= "IMG_20221103_150446" ;
+              } ;
+          } ;
+      ["输入栏模式"]	= true ;
+      ["搜索URL"]	= "" ;
+      ["menus"]	= {
+          } ;
+      } ;
+  ["switch"]	= {
+      ["显示状态栏"]	= false ;
+      ["横屏"]	= false ;
+      ["支持滑动页面"]	= false ;
+      ["启用启动图"]	= false ;
+      } ;
+  ["fltBtn"]	= {
+      ["点击事件"]	= "if dlan==nil then\
+  activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);--隐藏时间\
+  toolbar.parent.setVisibility(View.GONE)--隐藏顶栏\
+  dlsj=0\
+  dlan=0\
+  print(\"隐藏顶栏\")\
+ else\
+\
+\
+  activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);--显示时间\
+  toolbar.parent.setVisibility(View.VISIBLE)--显示顶栏\
+  dlsj=nil\
+  dlan=nil\
+  print(\"显示顶栏\")\
+end\
+\
+--悬浮按钮点击时执行的事件\
+" ;
+      ["图标"]	= "" ;
+      ["显示"]	= false ;
+      } ;
+  ["sidebar"]	= {
+      ["启用"]	= true ;
+      ["items"]	= {
+          [1]	= {
+              ["onClick"]	= "if dlan==nil then\
+  activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);--隐藏时间\
+  toolbar.parent.setVisibility(View.GONE)--隐藏顶栏\
+  dlsj=0\
+  dlan=0\
+  print(\"隐藏顶栏\")\
+ else\
+\
+\
+  activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);--显示时间\
+  toolbar.parent.setVisibility(View.VISIBLE)--显示顶栏\
+  dlsj=nil\
+  dlan=nil\
+  print(\"显示顶栏\")\
+end\
+\
+--悬浮按钮点击时执行的事件\
+" ;
+              ["name"]	= "全屏模式(返回退出)" ;
+              ["icon"]	= "drawable/1638674167101.png" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "gg = gg-1\
+if gg == 0 then\
+import \"android.view.WindowManager\"\
+activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)\
+gg=2\
+print'沉浸模式'\
+else\
+import \"android.view.WindowManager\"\
+activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)\
+\
+\
+end\
+" ;
+              ["name"]	= "状态栏显示/沉浸" ;
+              ["icon"]	= "drawable/IMG_20221106_072332.png" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "进入子页面(\"设置\")" ;
+              ["name"]	= "设置" ;
+              ["icon"]	= "drawable/shezhi.png" ;
+              } ;
+          } ;
+      ["启用顶部图片"]	= false ;
+      } ;
+  ["web_control"]	= {
+      } ;
+  ["view_attribute"]	= {
+      ["顶栏标题"]	= "阅卷平台" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏阴影强度"]	= "0dp" ;
+      ["顶栏高度"]	= "55dp" ;
+      ["侧滑栏宽度"]	= "300dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      } ;
+  ["colors"]	= {
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["进度条"]	= "#ffffffff" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["悬浮按钮"]	= "#ff33a7aa" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["导航栏"]	= "#ff2c2e43" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["顶栏部件"]	= "#ff000000" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["顶栏"]	= "#ffffffff" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      } ;
+  ["web"]	= {
+      ["启用长按菜单"]	= false ;
+      ["启动网页"]	= "https://mls.xiaoxianai.cn" ;
+      ["支持打开外部应用"]	= true ;
+      ["网页沉浸"]	= true ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用进度条"]	= false ;
+      } ;
+  ["events"]	= {
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+浏览器对象，新标题=..." ;
+      ["程序启动"]	= "\
+\
+\
+\
+\
+\
+\
+function AdapLan(zh,el)\
+  import \"java.util.Locale\"\
+  NowLanguage = Locale.getDefault().getLanguage();\
+  if NowLanguage==\"zh\" then\
+    return zh\
+  else\
+    return el\
+  end\
+end\
+\
+\
+\
+\
+titleTvw.setText(AdapLan('阅卷平台','Grading Test Platform'))\
+\
+\
+\
+\
+\
+import \"android.content.pm.ActivityInfo\"\
+\
+--用户\
+activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);\
+gg=1\
+\
+--fltBtn.setBackgroundColor(0xFF307AF7)\
+\
+加载Js([[document.body.style.paddingTop=0]])\
+--[[\
+function 控件圆角(id,InsideColor,radiu)\
+    import \"android.graphics.drawable.GradientDrawable\"\
+    drawable = GradientDrawable()\
+    drawable.setShape(GradientDrawable.RECTANGLE)\
+    drawable.setColor(InsideColor)\
+    drawable.setCornerRadii({radiu,radiu,radiu,radiu,radiu,radiu,radiu,radiu});\
+    id.setBackgroundDrawable(drawable)\
+  end\
+\
+  控件圆角(fltBtn,0xFF307AF7,300)\
+]]\
+\
+参数=0\13\
+function onKeyDown(code,event) \13\
+if string.find(tostring(event),\"KEYCODE_BACK\") ~= nil then \13\
+if 参数+2 > tonumber(os.time()) then \13\
+网页后退()\13\
+else\
+activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);--显示时间\
+  toolbar.parent.setVisibility(View.VISIBLE)--显示顶栏\
+ Toast.makeText(activity,AdapLan(\"连按两次返回按键后退页面\",\"Press twice to return to the back page\"), Toast.LENGTH_SHORT )\13\
+.show()\13\
+参数=tonumber(os.time()) \13\
+end\13\
+return true \13\
+end\13\
+end\
+\
+\
+\
+\
+\
+\
+\
+function AdapLan(zh,el)\
+  import \"java.util.Locale\"\
+  NowLanguage = Locale.getDefault().getLanguage();\
+  if NowLanguage==\"zh\" then\
+    return zh\
+  else\
+    return el\
+  end\
+end\
+\
+\
+\
+drawerLayout.setScrimColor(0)\
+\
+--[[添加背景\
+drawerLayout.addView(loadlayout({\
+  ImageView,\
+  id=\"background\",\
+  scaleType=\"fitXY\",\
+  src=\"drawable/background.jpg\",\
+}),0)\
+\
+--获取页面根布局\
+--local lay=drawerLayout.getChildAt(1)\
+\
+--监听侧滑滑动事件\
+local pio=this.getWidth()*0.1\
+drawerLayout.setDrawerListener(DrawerLayout.DrawerListener{\
+  onDrawerSlide=function(v,i)\
+    lay.setScaleX(1-i/3.5).setScaleY(1-i/3.5)--页面缩放\
+    lay.setTranslationX((({0,0,1,0,-1})[v.LayoutParams.gravity])*(i*3.5*pio))--页面位移(其中那段奇怪的表是用于判断位移方向，不过依然仅支持左右侧滑)\
+    --sidebar.setScaleX(2-i).setScaleY(2-i)--侧滑栏从大到小缩放\
+    --sidebar.setScaleX(i).setScaleY(i)--侧滑栏从小到大缩放\
+  end})\
+\
+--新增右侧侧滑栏]]\
+\
+--drawerLayout.addView(\
+sidebar.layoutParams.gravity=0--剥夺侧滑身份\
+\
+page=drawerLayout.getChildAt(0)--获取整个页面\
+drawerLayout.removeView(page)--修改页面层次\
+drawerLayout.addView(page)--作用同上\
+\
+sidebar=loadlayout\
+\
+\
+\
+{\
+  ScrollView,\
+  layout_width=\"300dp\";\
+  layout_height=\"wrap\";\
+  VerticalScrollBarEnabled=false;\
+  \
+  id=\"sidebar\",\
+ \
+{\
+  LinearLayout;--线性布局\
+  Orientation='horizontal';--布局方向\
+  layout_width='300dp';--布局宽度\
+  layout_height='wrap';--布局高度\
+  background='';--布局背景颜色\
+  id=\"sidebar\",\
+\
+  {\
+    CardView;--卡片控件\
+    layout_margin='30dp';--边距\
+    layout_gravity='center';--重力\
+    --左:left 右:right 中:center 顶:top 底:bottom\
+    elevation='0dp';--阴影\
+    layout_width='fill';--宽度\
+    layout_height='wrap';--高度\
+    CardBackgroundColor='#f1f3f5';--颜色\
+    radius='17dp';--圆角\
+    elevation='10dp';--卡片阴影\
+\
+      {\
+              ImageView;--图片控件\
+              src='mohu9.jpg';--图片路径\
+              layout_width='fill';--图片宽度\
+              layout_height='fill';--图片高度\
+          --    scaleType='fitXY';--图片显示类型\
+              id='pic';\
+               scaleType=\"centerCrop\"\
+\
+\
+            };\
+\
+    {\
+    CardView;--卡片控件\
+    layout_margin='15dp';--边距\
+    layout_gravity='center|top';--重力\
+    --左:left 右:right 中:center 顶:top 底:bottom\
+    elevation='0dp';--阴影\
+    layout_width='fill';--宽度\
+    layout_height='6%h';--高度\
+    CardBackgroundColor='';--颜色\
+    radius='8dp';--圆角\
+ \
+    {\
+      TextView;--文本控件\
+      layout_width='fill';--文本宽度\
+      layout_height='fill';--文本高度\
+      gravity='left|center';--重力属性\
+      --左:left 右:right 中:center 顶:top 底:bottom\
+      textColor='#000000';--文字颜色\
+      text=AdapLan('更多','More');--显示的文字\
+      textSize='23dp';--文字大小\
+    };\
+  };\
+\
+\
+\
+  {\
+    CardView;--卡片控件\
+    layout_margin='';--边距\
+    layout_marginLeft='13dp';--左距\
+    layout_marginRight='13dp';--右距\
+   layout_marginTop='10%h';--顶距\
+    layout_gravity='center|top';--重力\
+    --左:left 右:right 中:center 顶:top 底:bottom\
+    elevation='0dp';--阴影\
+    layout_width='fill';--宽度\
+    layout_height='8%h';--高度\
+    CardBackgroundColor='#ffffffff';--颜色\
+    radius='17dp';--圆角\
+\
+    {\
+      CardView;--卡片控件\
+      layout_margin='';--边距\
+      layout_gravity='';--重力\
+      --左:left 右:right 中:center 顶:top 底:bottom\
+      elevation='0dp';--阴影\
+      layout_width='fill';--宽度\
+      layout_height='8%h';--高度\
+     -- layout_marginTop='';--顶距\
+      CardBackgroundColor='#ffffffff';--颜色\
+      radius='';--圆角\
+      id='ka';\
+      {\
+        TextView;--文本控件\
+        layout_width='fill';--文本宽度\
+        layout_height='fill';--文本高度\
+        gravity='center|left';--重力属性\
+        textColor='#000000';--文字颜色\
+        text=AdapLan('全屏显示','Full Screen Mode');--显示的文字\
+        textSize='17dp';--文字大小\
+        layout_margin='8dp';--边距\
+        id='ka';\
+      };\
+       \
+    };\
+\
+  };\
+\
+\
+  {\
+    CardView;--卡片控件\
+    layout_margin='';--边距\
+    layout_marginLeft='13dp';--左距\
+    layout_marginRight='13dp';--右距\
+   layout_marginTop='20%h';--顶距\
+    layout_gravity='center|top';--重力\
+    --左:left 右:right 中:center 顶:top 底:bottom\
+    elevation='0dp';--阴影\
+    layout_width='fill';--宽度\
+    layout_height='8%h';--高度\
+    CardBackgroundColor='#ffffffff';--颜色\
+    radius='17dp';--圆角\
+\
+    {\
+      CardView;--卡片控件\
+      layout_margin='';--边距\
+      layout_gravity='';--重力\
+      --左:left 右:right 中:center 顶:top 底:bottom\
+      elevation='0dp';--阴影\
+      layout_width='fill';--宽度\
+      layout_height='8%h';--高度\
+     -- layout_marginTop='';--顶距\
+      CardBackgroundColor='#ffffffff';--颜色\
+      radius='';--圆角\
+      id='kb';\
+      {\
+        TextView;--文本控件\
+        layout_width='fill';--文本宽度\
+        layout_height='fill';--文本高度\
+        gravity='center|left';--重力属性\
+        textColor='#000000';--文字颜色\
+        text=AdapLan('沉浸状态栏','Status Bar Display');--显示的文字\
+        textSize='17dp';--文字大小\
+        layout_margin='8dp';--边距\
+        id='kb';\
+      };\
+       \
+    };\
+\
+\
+\
+\
+\
+  };\
+\
+  {\
+    CardView;--卡片控件\
+    layout_margin='';--边距\
+    layout_marginLeft='13dp';--左距\
+    layout_marginRight='13dp';--右距\
+   layout_marginTop='30%h';--顶距\
+    layout_gravity='center|top';--重力\
+    --左:left 右:right 中:center 顶:top 底:bottom\
+    elevation='0dp';--阴影\
+    layout_width='fill';--宽度\
+    layout_height='8%h';--高度\
+    CardBackgroundColor='#ffffffff';--颜色\
+    radius='17dp';--圆角\
+\
+    {\
+      CardView;--卡片控件\
+      layout_margin='';--边距\
+      layout_gravity='';--重力\
+      --左:left 右:right 中:center 顶:top 底:bottom\
+      elevation='0dp';--阴影\
+      layout_width='fill';--宽度\
+      layout_height='8%h';--高度\
+     -- layout_marginTop='';--顶距\
+      CardBackgroundColor='#ffffffff';--颜色\
+      radius='';--圆角\
+      id='kc';\
+      {\
+        TextView;--文本控件\
+        layout_width='fill';--文本宽度\
+        layout_height='fill';--文本高度\
+        gravity='center|left';--重力属性\
+        textColor='#000000';--文字颜色\
+        text=AdapLan('设置','Settings');--显示的文字\
+        textSize='17dp';--文字大小\
+        layout_margin='8dp';--边距\
+        id='kc';\
+      };\
+       \
+    };\
+\
+\
+\
+\
+\
+  };\
+\
+\
+\
+\
+  {\
+    CardView;--卡片控件\
+    layout_margin='';--边距\
+    layout_marginLeft='13dp';--左距\
+    layout_marginRight='13dp';--右距\
+   layout_marginTop='40%h';--顶距\
+    layout_gravity='center|top';--重力\
+    --左:left 右:right 中:center 顶:top 底:bottom\
+    elevation='0dp';--阴影\
+    layout_width='fill';--宽度\
+    layout_height='8%h';--高度\
+    CardBackgroundColor='#ffffffff';--颜色\
+    radius='17dp';--圆角\
+\
+    {\
+      CardView;--卡片控件\
+      layout_margin='';--边距\
+      layout_gravity='';--重力\
+      --左:left 右:right 中:center 顶:top 底:bottom\
+      elevation='0dp';--阴影\
+      layout_width='fill';--宽度\
+      layout_height='8%h';--高度\
+     -- layout_marginTop='';--顶距\
+      CardBackgroundColor='#ffffffff';--颜色\
+      radius='';--圆角\
+      id='kd';\
+      {\
+        TextView;--文本控件\
+        layout_width='fill';--文本宽度\
+        layout_height='fill';--文本高度\
+        gravity='center|left';--重力属性\
+        textColor='#000000';--文字颜色\
+        text=AdapLan('退出阅卷','Exit this Page');--显示的文字\
+        textSize='17dp';--文字大小\
+        layout_margin='8dp';--边距\
+        id='kd';\
+      };\
+       \
+    };\
+\
+\
+\
+\
+\
+  };\
+\
+      {\
+        CardView;--卡片控件\
+        layout_margin='';--边距\
+        layout_marginLeft='13dp';--左距\
+        layout_marginRight='13dp';--右距\
+        layout_marginTop='50%h';--顶距\
+        layout_gravity='center|top';--重力\
+        --左:left 右:right 中:center 顶:top 底:bottom\
+        elevation='0dp';--阴影\
+        layout_width='fill';--宽度\
+        layout_height='50%h';--高度\
+        CardBackgroundColor='';--颜色\
+        radius='17dp';--圆角\
+\
+\
+    \
+    };\
+\
+};\
+\
+};\
+\
+\
+\
+\
+\
+\
+\
+\
+};\
+\
+\
+\
+\
+\
+\
+drawerLayout.addView(sidebar)--替身加入\
+sidebar.LayoutParams.gravity=3--设置为右侧侧栏\
+--sidebar=fakesb--由替身代替原侧滑执行其它任务\
+\
+\
+ka.onClick=function(v)\
+    ka.setCardBackgroundColor(0xFFE7E8EA)\
+      task(80,function()\
+        ka.setCardBackgroundColor(0xffffffff)\
+      end)\
+\
+if dlan==nil then\
+  activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);--隐藏时间\
+  toolbar.parent.setVisibility(View.GONE)--隐藏顶栏\
+  dlsj=0\
+  dlan=0\
+  print(AdapLan('隐藏顶栏','Hide the Top Bar'))\
+ else\
+\
+\
+  activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);--显示时间\
+  toolbar.parent.setVisibility(View.VISIBLE)--显示顶栏\
+  dlsj=nil\
+  dlan=nil\
+  print(AdapLan('显示顶栏','Display the Top Bar'))\
+end\
+end;\
+kb.onClick=function(v)\
+    kb.setCardBackgroundColor(0xFFE7E8EA)\
+      task(80,function()\
+        kb.setCardBackgroundColor(0xffffffff)\
+      end)\
+\
+gg = gg-1\
+if gg == 0 then\
+import \"android.view.WindowManager\"\
+activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)\
+gg=2\
+--print'沉浸模式'\
+else\
+import \"android.view.WindowManager\"\
+activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)\
+\
+\
+end\
+\
+end;\
+kc.onClick=function(v)\
+    kc.setCardBackgroundColor(0xFFE7E8EA)\
+      task(80,function()\
+        kc.setCardBackgroundColor(0xffffffff)\
+      end)\
+\
+进入子页面(\"设置\")\
+end;\
+kd.onClick=function(v)\
+    kd.setCardBackgroundColor(0xFFE7E8EA)\
+      task(80,function()\
+        kd.setCardBackgroundColor(0xffffffff)\
+      end)\
+\
+退出页面()\
+end;\
+\
+\
+\
+\
+\
+" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      } ;
+  } ;
